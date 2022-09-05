@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en-US" dir="ltr">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>Rexon-Consult</title>
+
+    <link rel="stylesheet" href="{% static 'cdn.jsdelivr.net/npm/bootstrap%404.2.1/dist/css/bootstrap.min.css' %}" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'bitversexpertlogo.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'bitversexpertlogo.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'bitversexpertlogo.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'bitversexpertlogo.png' %}">
+    <link rel="manifest" href="{% static 'temp2/assets/img/favicons/manifest.json' %}">
+    <meta name="msapplication-TileImage" content="{% static 'temp2/assets/img/favicons/mstile-150x150.png' %}">
+    <meta name="theme-color" content="#ffffff">
+    <script src="{% static 'temp2/assets/js/config.js' %}"></script>
+    <script src="{% static 'temp2/vendors/overlayscrollbars/OverlayScrollbars.min.js' %}"></script>
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link href="{% static 'temp2/vendors/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+    <link href="{% static 'temp2/vendors/overlayscrollbars/OverlayScrollbars.min.css' %}" rel="stylesheet">
+    <link href="{% static 'temp2/assets/css/theme-rtl.min.css' %}" rel="stylesheet" id="style-rtl">
+    <link href="{% static 'temp2/assets/css/theme.min.css' %}" rel="stylesheet" id="style-default">
+    <link href="{% static 'temp2/assets/css/user-rtl.min.css' %}" rel="stylesheet" id="user-style-rtl">
+    <link href="{% static 'temp2/assets/css/user.min.css' %}" rel="stylesheet" id="user-style-default">
+    <script>
+        var isRTL = JSON.parse(localStorage.getItem('isRTL'));
+        if (isRTL) {
+            var linkDefault = document.getElementById('style-default');
+            var userLinkDefault = document.getElementById('user-style-default');
+            linkDefault.setAttribute('disabled', true);
+            userLinkDefault.setAttribute('disabled', true);
+            document.querySelector('html').setAttribute('dir', 'rtl');
+        } else {
+            var linkRTL = document.getElementById('style-rtl');
+            var userLinkRTL = document.getElementById('user-style-rtl');
+            linkRTL.setAttribute('disabled', true);
+            userLinkRTL.setAttribute('disabled', true);
+        }
+    </script>
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        #google_translate_element {
+            z-index: 9999999;
+            position: fixed;
+            bottom: 25px;
+            left: 15px;
+        }
+
+        .goog-te-gadget {
+            font-family: Roboto, "Open Sans", sans-serif !important;
+            text-transform: uppercase;
+        }
+
+        .goog-te-gadget-simple {
+            background-color: rgba(0, 0, 0, 0.5) !important;
+            border: 1px solid rgba(255, 255, 255, 0.5) !important;
+            padding: 3px !important;
+            border-radius: 4px !important;
+            font-size: 0.8rem !important;
+            line-height: 2rem !important;
+            display: inline-block;
+            cursor: pointer;
+            zoom: 1;
+            margin-bottom: 4px;
+        }
+
+        .goog-te-menu2 {
+            max-width: 100%;
+        }
+
+        .goog-te-menu-value {
+            color: #fff !important;
+        }
+        .goog-te-menu-value:before {
+            font-family: 'Material Icons';
+            content: "\E927";
+            margin-right: 16px;
+            font-size: 2rem;
+            vertical-align: -10px;
+        }
+
+        .goog-te-menu-value span:nth-child(5) {
+            display: none;
+        }
+
+        .goog-te-menu-value span:nth-child(3) {
+            border: none !important;
+            font-family: 'Material Icons';
+        }
+        .goog-te-menu-value span:nth-child(3):after {
+            font-family: 'Material Icons';
+            content: "\E5C5";
+            font-size: 1.5rem;
+            vertical-align: -6px;
+        }
+
+        .goog-te-gadget-icon {
+            background-position: 0px 0px;
+            height: 32px !important;
+            width: 32px !important;
+            margin-right: 8px !important;
+            display: none;
+        }
+
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
+        }
+
+
+        body {
+            top: 0px !important;
+        }
+
+        /* ================================== *\
+            Mediaqueries
+        \* ================================== */
+        @media (max-width: 667px) {
+            #google_translate_element {
+            }
+            #google_translate_element goog-te-gadget {
+            }
+            #google_translate_element .skiptranslate {
+            }
+            #google_translate_element .goog-te-gadget-simple {
+                text-align: center;
+            }
+        }
+    </style>
+    <script src="{% static 'code.jquery.com/jquery-3.6.0.min.js' %}" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<!-- Head -->
+
+<body>
+
+<!-- ===============================================-->
+<!--    Main Content-->
+<!-- ===============================================-->
+<main class="main" id="top">
+
+
+    <!-- Head -->
+
+    <!-- Head -->
+
+        <style>
+        .fullscreen-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+        }
+        .fullscreen-bg__video {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+        }
+        @media (min-aspect-ratio: 16/9) {
+            .fullscreen-bg__video {
+                width: 100%;
+                height: auto;
+            }
+        }
+        @media (max-width: 767px) {
+            .fullscreen-bg__video {
+                width: auto;
+                height: 100%;
+            }
+            .fullscreen-bg{
+                width: 1000px;
+            }
+        }
+    </style>
+
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top" style="background-color: transparent; background-image: linear-gradient(to top, #ffffff 0%, #ffffff 60%);">
+
+        <div class="container" data-layout="container" style="z-index: 10">
+            <div class="row flex-center min-vh-100 py-6">
+                <div class="col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4"><a class="d-flex flex-center mb-4" href="index.html"><img class="me-2" src="temp/asset/images/logo.png" alt="" width="200" /></a>
+                    <div class="card">
+                        <div class="card-body p-4 p-sm-5">
+                                                        <div class="row flex-between-center mb-2">
+                                <div class="col-auto">
+                                    <h5>Register</h5>
+                                </div>
+                                <div class="col-auto fs--1 text-600"><span class="mb-0 undefined">Have an account?</span> <span><a href="{% url 'signin' %}">Login</a></span></div>
+                            </div>
+                            <form action="" method="post" >
+                                {% csrf_token %}
+                                {% for field in form %}
+                                    {{field.errors}}
+                                {% endfor %}
+                                <div class="row gx-2">
+                                    <div class="mb-3 col-sm-6">
+                                        {{form.username}}
+                                    </div>
+                                    <div class="mb-3 col-sm-6">
+                                        {{form.email}}
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    {{form.first_name}}
+                                </div>
+                                <div class="mb-3">
+                                    {{form.last_name}}
+                                </div>
+                                <div class="row gx-2">
+                                    <div class="mb-3 col-sm-6">
+                                        {{form.password1}}
+                                    </div>
+                                     <div class="mb-3 col-sm-6">
+                                        {{form.password2}}
+                                    </div>
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-label">By clicking register you agree to our <a href="{% url 'terms' %}">terms </a>and <a href="{% url 'privacy' %}">privacy policy</a></label>
+                                </div>
+                                <div class="mb-3">
+                                    <button class="btn btn-primary d-block w-100 mt-3" type="submit" name="create">Register</button>
+                                </div>
+                            </form>
+                            <div class="position-relative mt-4">
+                                <hr class="bg-300" />
+                            </div>
+                            <div class="row g-2 mt-2">
+                                <div class="col-sm-6"><a class="btn btn-outline-facebook btn-sm d-block w-100" href="{% url 'home' %}"> Back To Home</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- ===============================================-->
+    <!--    End of Main Content-->
+    <!-- ===============================================-->
+
+
+    <div id="google_translate_element"></div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
+        <script>
+            /* Because i didnt set placeholder values in forms.py they will be set here using vanilla Javascript
+    //We start indexing at one because CSRF_token is considered and input field
+     */
+
+    //Query All input fields
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder='username..';
+    form_fields[2].placeholder='Email..';
+    form_fields[3].placeholder='First Name...';
+    form_fields[4].placeholder='Last Name...';
+    form_fields[5].placeholder='Password...';
+    form_fields[6].placeholder='Confirm Password...';
+
+
+
+    for (var field in form_fields){
+      form_fields[field].className += ' form-control'
+    }
+  </script>
+
+    <script type="text/javascript" src="{% static 'temp2/translate.google.com/translate_a/elementa0d8a0d8.js?cb=googleTranslateElementInit' %}"></script>
+    <!-- Footer -->
+    <div class="theme-control-toggle fa-icon-wait px-2" style="margin-top: -3px">
+        <input class="form-check-input ms-0 theme-control-toggle-input" id="themeControlToggle" type="checkbox" data-theme-control="theme" value="dark" />
+        <!--<label id="dark" class="mb-0 theme-control-toggle-label theme-control-toggle-light" for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch to light theme"></label>-->
+        <label id="dark" class="mb-0 theme-control-toggle-label theme-control-toggle-dark" for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Switch to dark theme"><span class="fas fa-moon fs-0"></span></label>
+    </div>
+</main>
+<!-- ===============================================-->
+<!--    End of Main Content-->
+<!-- ===============================================-->
+
+
+<!-- ===============================================-->
+<!--    JavaScripts-->
+<!-- ===============================================-->
+<!-- Head -->
+<!-- ===============================================-->
+<!--    JavaScripts-->
+<!-- ===============================================-->
+<script src="{% static 'temp2/vendors/popper/popper.min.js' %}"></script>
+<script src="{% static 'temp2/vendors/bootstrap/bootstrap.min.js' %}"></script>
+<script src="{% static 'temp2/vendors/anchorjs/anchor.min.js' %}"></script>
+<script src="{% static 'temp2/vendors/is/is.min.js' %}"></script>
+<script src="{% static 'temp2/vendors/swiper/swiper-bundle.min.js' %}"> </script>
+<script src="{% static 'temp2/vendors/typed.js/typed.js' %}"></script>
+<script src="{% static 'temp2/vendors/fontawesome/all.min.js' %}"></script>
+<script src="{% static 'temp2/vendors/lodash/lodash.min.js' %}"></script>
+<script src="{% static 'temp2/polyfill.io/v3/polyfill.min58be58be.js?features=window.scroll' %}"></script>
+<script src="{% static 'temp2/vendors/list.js/list.min.js' %}"></script>
+<script src="{% static 'temp2/assets/js/theme.js' %}"></script>   <!-- Head -->
+
+<script>
+    var theme = localStorage.getItem('theme');
+
+    if(theme == 'dark'){
+        $(function() {
+            $('#dark').click();
+        });
+    }
+</script>
+</body>
+</html>
